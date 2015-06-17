@@ -107,6 +107,8 @@ text(0.5,0.5,labels=paste("t = ",t),cex=2)
 }
 
 ## genomic RNA degradation and synthesis
+D <- NULL
+G <- NULL
 for (j in 1:2) {
 D[j] <- rbinom(1,table[j,2],d)
 G[j] <- rbinom(1,table[j,3],rep[j])
