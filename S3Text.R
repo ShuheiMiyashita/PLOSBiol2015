@@ -110,10 +110,10 @@ t <- t+1
 while (RCO > 0) {
 if (nsum == 0) break
 
-for (j in 1:alive) {
-D[j] <- rbinom(1,table[j,2],d)
-table[j,2] <- table[j,2]-D[j]+1*table[j,3]
-}
+
+D <- rbinom(c(rep(1,alive)),table[,2],d)
+table[,2] <- table[,2]-D+1*table[,3]
+
 
 nsum <- sum(table[,2])
 
