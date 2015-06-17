@@ -87,10 +87,10 @@ D <- c(rep(0,1+cmax))
 while (RCO > 0) {
 if (nsum == 0) break
 
-for (j in 1:(cmax+1)) {
-D[j] <- rbinom(1,table[3,j],d)
-table[3,j] <- table[3,j]-D[j]+1*table[2,j]
-}
+
+D <- rbinom(c(rep(1,(cmax+1))),table[3,],d)
+table[3,] <- table[3,]-D+1*table[2,]
+
 
 nsum <- sum(table[3,])
 
