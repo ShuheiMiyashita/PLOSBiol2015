@@ -17,8 +17,8 @@ t <- 0
 
 # graphics settings
 letter <- c("8","9","A","B","C","D","E","F")
-nresult <- matrix(rep("NA",600),nrow=2)
-rresult <- matrix(rep("NA",600),nrow=2)
+nresult <- matrix(rep(NA,600),nrow=2)
+rresult <- matrix(rep(NA,600),nrow=2)
 
 
 # main body of simulation
@@ -86,10 +86,10 @@ text(0.5,0.5,labels=paste("t = ",t),cex=2)
 }
 
 ## genomic RNA degradation and synthesis
-for (j in 1:alive) {
-D[j] <- rbinom(1,table[j,2],d)
-table[j,2] <- table[j,2]-D[j]+1*table[j,3]
-}
+
+D <- rbinom(c(rep(1,alive)),table[,2],d)
+table[,2] <- table[,2]-D+1*table[,3]
+
 
 nsum <- sum(table[,2])
 
