@@ -150,7 +150,7 @@ resultas[c,1] <- founder
 nsumf <- sum(tablef[,2])
 
 if (founder == 0){
-result[c,] <- c(rep(0,150))
+
 }else{
 rn <- tablef[,2]/nsumf
 resultas[c,2] <- sum(-rn*log(rn))
